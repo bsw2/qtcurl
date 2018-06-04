@@ -37,25 +37,50 @@
         <item row="0" column="0">
          <widget class="QLabel" name="urlLabel">
           <property name="text">
-           <string>Download Url:</string>
+           <string>Use Unix Socket</string>
           </property>
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="urlEdit">
-          <property name="text">
-           <string>http://google.com</string>
-          </property>
+         <widget class="QCheckBox" name="useUnixSocket">
          </widget>
         </item>
         <item row="1" column="0">
+         <widget class="QLabel" name="unixSocketPathLabel">
+          <property name="text">
+           <string>Unix Socket Path</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="unixSocketPath">
+          <property name="text">
+           <string>/var/run/docker.sock</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="urlLabel">
+          <property name="text">
+           <string>Download Url:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="urlEdit">
+          <property name="text">
+           <string>http://localhost:2376/containers/json</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
          <widget class="QLabel" name="fileNameLabel">
           <property name="text">
            <string>Download to File:</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
+        <item row="3" column="1">
          <widget class="QLineEdit" name="fileNameEdit">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">

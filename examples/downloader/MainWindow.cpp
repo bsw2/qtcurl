@@ -2,6 +2,8 @@
 #include "ui_MainWindow.h"
 #include "CurlEasy.h"
 
+#include <iostream>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -54,6 +56,15 @@ void MainWindow::on_startStopButton_clicked()
         return size;
     });
 
+std::cout << ui->useUnixSocket->checkState() << std::endl;
+    if (!ui->useUnixSocket->checkState())
+        {
+        transfer->set(CURLOPT_UNIX_SOCKET_PATH, "");
+        }
+    else
+        {
+        transfer->set(CURLOPT_UNIX_SOCKET_PATH, ui->unixSocketPath->text());
+        }
     transfer->set(CURLOPT_URL, QUrl(ui->urlEdit->text()));
     transfer->set(CURLOPT_FOLLOWLOCATION, long(1)); // Follow redirects
     transfer->set(CURLOPT_FAILONERROR, long(1)); // Do not return CURL_OK in case valid server responses reporting errors.
