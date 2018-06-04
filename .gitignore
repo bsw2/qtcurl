@@ -1,2 +1,6 @@
 examples/build*
 *.pro.user
+examples/downloader/moc*
+examples/downloader/Makefile
+examples/downloader/downloader
+
